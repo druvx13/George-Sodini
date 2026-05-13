@@ -38,6 +38,59 @@ sup a:hover { text-decoration: underline; }
     max-width: 100%;
   }
 }
+.gallery-box {
+  border: 1px solid #a2a9b1;
+  background: #f8f9fa;
+  padding: 8px;
+  margin: 16px 0;
+  text-align: center;
+  clear: both;
+}
+.gallery-main {
+  display: block;
+  margin: 0 auto 8px;
+  border: 1px solid #c8ccd1;
+  background: #fff;
+  padding: 3px;
+  max-width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+}
+.gallery-strip {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 4px 0;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.gallery-strip img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #c8ccd1;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: #fff;
+  padding: 1px;
+}
+.gallery-strip img:hover {
+  border-color: #3366cc;
+}
+.gallery-strip img.active {
+  border-color: #3366cc;
+  box-shadow: 0 0 4px rgba(51,102,204,0.6);
+}
+.gallery-label {
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 90%;
+}
+.gallery-caption {
+  font-size: 85%;
+  margin-top: 4px;
+  color: #333;
+}
 </style>
 </head>
 <body>
@@ -65,9 +118,20 @@ sup a:hover { text-decoration: underline; }
 
 <h3>Personal Background</h3>
 
-<div class="infobox">
-<img src="sodini_003.webp" alt="George Sodini">
-<div class="caption"><strong>George Sodini</strong>, c. 2009</div>
+<div class="gallery-box">
+<div class="gallery-label">George Sodini — Personal Photos</div>
+<img id="gallery1-main" class="gallery-main" src="imgs/sodini_000.jpg" alt="George Sodini">
+<div class="gallery-strip" id="gallery1-strip">
+<img src="imgs/sodini_000.jpg" alt="sodini_000" class="active" onclick="switchGallery('gallery1', 'imgs/sodini_000.jpg', this)">
+<img src="imgs/sodini_001.jpg" alt="sodini_001" onclick="switchGallery('gallery1', 'imgs/sodini_001.jpg', this)">
+<img src="imgs/sodini_002.jpg" alt="sodini_002" onclick="switchGallery('gallery1', 'imgs/sodini_002.jpg', this)">
+<img src="imgs/sodini_003.jpg" alt="sodini_003" onclick="switchGallery('gallery1', 'imgs/sodini_003.jpg', this)">
+<img src="imgs/sodini_004.jpg" alt="sodini_004" onclick="switchGallery('gallery1', 'imgs/sodini_004.jpg', this)">
+<img src="imgs/sodini_005.jpg" alt="sodini_005" onclick="switchGallery('gallery1', 'imgs/sodini_005.jpg', this)">
+<img src="imgs/sodini_006.jpg" alt="sodini_006" onclick="switchGallery('gallery1', 'imgs/sodini_006.jpg', this)">
+<img src="imgs/sodini_video.jpg" alt="sodini_video" onclick="switchGallery('gallery1', 'imgs/sodini_video.jpg', this)">
+</div>
+<div class="gallery-caption">Photos of George Sodini from his online blog and video posts, c. 2008–2009.</div>
 </div>
 
 <h4>Early Life and Education</h4>
@@ -109,17 +173,49 @@ sup a:hover { text-decoration: underline; }
 
 <h3>The Shooting Incident</h3>
 
-<div class="infobox">
-<img src="sodini_102.webp" alt="LA Fitness gym where the shooting occurred">
-<div class="caption"><strong>LA Fitness</strong> in Collier Township, Pennsylvania, where the shooting took place on August 4, 2009.</div>
+<div class="gallery-box">
+<div class="gallery-label">LA Fitness — Collier Township, Pennsylvania</div>
+<img id="gallery2-main" class="gallery-main" src="imgs/sodini_101.jpg" alt="LA Fitness">
+<div class="gallery-strip" id="gallery2-strip">
+<img src="imgs/sodini_101.jpg" alt="sodini_101" class="active" onclick="switchGallery('gallery2', 'imgs/sodini_101.jpg', this)">
+<img src="imgs/sodini_102.jpg" alt="sodini_102" onclick="switchGallery('gallery2', 'imgs/sodini_102.jpg', this)">
+<img src="imgs/sodini_103.jpg" alt="sodini_103" onclick="switchGallery('gallery2', 'imgs/sodini_103.jpg', this)">
+<img src="imgs/sodini_104.jpg" alt="sodini_104" onclick="switchGallery('gallery2', 'imgs/sodini_104.jpg', this)">
+<img src="imgs/sodini_105.jpg" alt="sodini_105" onclick="switchGallery('gallery2', 'imgs/sodini_105.jpg', this)">
+<img src="imgs/sodini_106.jpg" alt="sodini_106" onclick="switchGallery('gallery2', 'imgs/sodini_106.jpg', this)">
+<img src="imgs/sodini_107.jpg" alt="sodini_107" onclick="switchGallery('gallery2', 'imgs/sodini_107.jpg', this)">
+</div>
+<div class="gallery-caption">Exterior and interior photos of the LA Fitness gym where the shooting occurred on August 4, 2009.</div>
 </div>
 
 <h4>Sequence of Events</h4>
+
+<div class="gallery-box">
+<div class="gallery-label">Map of the Shooting</div>
+<img id="gallery3-main" class="gallery-main" src="imgs/shooting_graphic.gif" alt="Map of LA Fitness shooting">
+<div class="gallery-strip" id="gallery3-strip">
+<img src="imgs/shooting_graphic.gif" alt="shooting_graphic" class="active" onclick="switchGallery('gallery3', 'imgs/shooting_graphic.gif', this)">
+</div>
+<div class="gallery-caption">Diagram depicting the layout of the LA Fitness aerobics studio and the sequence of events during the shooting.</div>
+</div>
+
 <p>On August 4, 2009, at approximately 7:56 p.m., George Sodini entered the LA Fitness gym in Collier Township, Pennsylvania, for the third time that day, carrying a gym bag containing multiple handguns and extra ammunition.<sup><a href="#ref11">[11]</a></sup> He proceeded to the aerobics studio where a Latin dance class, consisting primarily of women and numbering around 30 participants, was underway.<sup><a href="#ref25">[25]</a></sup> Sodini, dressed in dark clothing including a black jacket and headband, entered the room, held down the light switch for about 15 seconds to extinguish the lights—a technique he had learned during prior visits—and advanced roughly 10 feet inside before dropping his bag and initiating gunfire.<sup><a href="#ref4">[4]</a></sup></p>
 <p>Sodini fired indiscriminately at class participants using two 9mm semi-automatic pistols, emptying the first magazine and partially discharging the second, while splintering mirrors and scattering shell casings across the floor; forensic analysis later confirmed he discharged at least 36 rounds, with estimates reaching up to 52 shots from the weapons carried.<sup><a href="#ref4">[4]</a></sup><sup><a href="#ref26">[26]</a></sup> The assault targeted random individuals in the darkened room, with no evidence of prior specific threats against the gym or its attendees. Eyewitness accounts described participants scrambling to escape through side doors or hiding behind aerobic equipment as shots rang out.<sup><a href="#ref4">[4]</a></sup></p>
 <p>The entire shooting sequence lasted approximately one minute, concluding when Sodini retreated to a corner of the room, drew a .45-caliber pistol, and inflicted a fatal self-inflicted gunshot wound to the head, collapsing against a wall near aerobic steps; a fourth weapon, a .32-caliber pistol, remained unused in his pocket.<sup><a href="#ref4">[4]</a></sup><sup><a href="#ref11">[11]</a></sup> Police were dispatched following a 911 call around 8:16 p.m., arriving to find Sodini deceased alongside spent casings and the chaotic aftermath in the studio, which held about 70 people total in the broader gym at the time.<sup><a href="#ref11">[11]</a></sup><sup><a href="#ref4">[4]</a></sup></p>
 
 <h4>Victims and Injuries</h4>
+
+<div class="gallery-box">
+<div class="gallery-label">Victims of the Shooting</div>
+<img id="gallery4-main" class="gallery-main" src="imgs/heidi_overmier.jpg" alt="Heidi Overmier">
+<div class="gallery-strip" id="gallery4-strip">
+<img src="imgs/heidi_overmier.jpg" alt="Heidi Overmier" class="active" onclick="switchGallery('gallery4', 'imgs/heidi_overmier.jpg', this)">
+<img src="imgs/jody_billingsley.jpg" alt="Jody Billingsley" onclick="switchGallery('gallery4', 'imgs/jody_billingsley.jpg', this)">
+<img src="imgs/elizabeth_gannon.jpg" alt="Elizabeth Gannon" onclick="switchGallery('gallery4', 'imgs/elizabeth_gannon.jpg', this)">
+</div>
+<div class="gallery-caption">The three women killed in the August 4, 2009 shooting: Heidi Overmier (46), Jody Billingsley (37), and Elizabeth Gannon (49).</div>
+</div>
+
 <p>Three women were killed in the shooting: Heidi Overmier, 46, a mother of two and employee at a local bank; Jody Billingsley, 37, a medical sales representative; and Elizabeth Gannon, 49, an X-ray technician.<sup><a href="#ref4">[4]</a></sup> All fatalities occurred from multiple gunshot wounds sustained during the aerobics class at the LA Fitness gym in Collier Township, Pennsylvania, on August 4, 2009.</p>
 <p>Nine other women were injured, with injuries ranging from gunshot wounds to the torso, limbs, and head, some requiring surgery and extended hospitalization. Emergency medical services responded within minutes, transporting victims to nearby hospitals including Allegheny General Hospital and UPMC Presbyterian, where triage and treatment were prioritized for the most severe cases. By August 6, 2009, several survivors had been released, though some faced long-term recovery.</p>
 <p>The victims were all female participants in the Latin dance aerobics class, employed in various professional roles such as healthcare and finance, with no documented prior personal or professional connections to the perpetrator, George Sodini.</p>
@@ -175,6 +271,18 @@ sup a:hover { text-decoration: underline; }
 <footer>
 <p><small>&copy; 2009 George Sodini</small></p>
 </footer>
+
+<script>
+function switchGallery(galleryId, newSrc, thumbEl) {
+  document.getElementById(galleryId + '-main').src = newSrc;
+  var strip = document.getElementById(galleryId + '-strip');
+  var thumbs = strip.querySelectorAll('img');
+  for (var i = 0; i < thumbs.length; i++) {
+    thumbs[i].classList.remove('active');
+  }
+  thumbEl.classList.add('active');
+}
+</script>
 
 </body>
 </html>
